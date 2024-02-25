@@ -1,0 +1,66 @@
+<div id="formSection">
+    <div class="formContainer">
+        <h1>Say Hi!</h1>
+        <h3>Want to discuss a new project?</h3>
+        <h4>Say hello! let's discuss your ideas and make it happen</h4>
+        <div class="formBox">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" autocomplete="off" (keydown)="enterForm($event, contactForm)">
+                <div class="inputBox">
+                    <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
+                        [placeholder]="name.touched ? '' : 'Your name'" required autocomplete="off">
+                    @if( name.touched ){
+                    <span class="inputLabel">Your name</span>
+                    <img class="inputValidImg"
+                        [src]="name.value < 1 ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
+                    @if(name.value<1) { <span class="warningSpan">Please enter your name</span>} }
+                </div>
+                <div class="inputBox">
+                    <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                        [placeholder]="email.touched ? '' : 'Your email'" required autocomplete="off">
+                    @if( email.touched ){
+                    <span class="inputLabel">Your email</span>
+                    <img class="inputValidImg"
+                        [src]="!email.valid ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
+                    @if(email.value < 1) { <span class="warningSpan">Please enter your email</span>} }
+                </div>
+                <div class="textareaBox">
+                    <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message" cols="30"
+                        rows="10" required [placeholder]="message.touched ? '' : 'Your message'"></textarea>
+                    @if(message.touched) {
+                    <span class="inputLabel">Your message</span>
+                    <img class="inputValidImg"
+                        [src]="message.value < 1 ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
+                    }
+                    @if(message.value < 1 ) { <span class="warningSpan">Please enter a message</span>
+                        }
+                </div>
+
+                <div class="checkboxConatiner">
+                    <div class="checkboxRow">
+                        <div class="policiBox">
+                            <img (click)="Check()" #checked class="checked"
+                                [src]="isChecked ? 'assets/img/checkboxChecked.png' : 'assets/img/checkboxDefault.png'"
+                                alt="">
+                            <div>I've read the <a
+                                    href="https://www.privacypolicies.com/live/975daacb-2270-4e83-8d1d-645a7fc555e9"
+                                    target="_blank">privacy polici</a> and agree to the processing of my data as
+                                outlined.</div>
+                        </div>
+                        @if(checked.src == 'http://localhost:4200/assets/img/checkboxDefault.png' && policiChecked ) {
+                        <div class="warningSpan">Please accept the privacy polici </div>
+                        }
+                    </div>
+                    <input type="submit" #submit
+                        [disabled]="!name.valid || !email.valid || !message.valid || !isChecked" value="Send a message"
+                        class="submitBtn">
+
+
+                </div>
+
+
+            </form>
+        </div>
+        <span class="scrollUpBox"><img src="assets/img/arrowUpAnimation.png" (click)="scrollTopTop()" alt=""></span>
+    </div>
+
+</div>

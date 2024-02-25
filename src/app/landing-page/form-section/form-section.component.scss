@@ -1,0 +1,248 @@
+#formSection {
+    position: relative;
+    background-color: #000000;
+    margin-top: 100px;
+    color: white;
+}
+
+.formContainer {
+    background-color: #000000;
+    height: auto;
+    position: relative;
+    margin-top: 265px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h1 {
+        position: absolute;
+        left: 100px;
+        top: -100px;
+        font-family: syne;
+        font-size: 78px;
+        font-weight: 800;
+        line-height: 78px;
+        letter-spacing: 0.01em;
+    }
+
+    h3 {
+        font-family: overpass;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #5988FF;
+
+    }
+
+    h4 {
+        font-family: overpass;
+        font-size: 23px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFCF3;
+    }
+}
+
+.formContainer::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 47%;
+    top: -100px;
+    left: 0px;
+    background-color: #000000;
+    transform: skewY(6deg);
+    z-index: -1;
+}
+
+form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.submitBtn {
+    padding: 20px 60px ;
+    border: 4px solid #383838;
+    gap: 10px;
+    opacity: 0.3;
+    font-family: overpass;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.formBox {
+    margin-top: 32px;
+    width: 617px;
+
+    #email,
+    #name,
+    #message {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid white;
+        padding: 15px 25px;
+        gap: 24px;
+        background-color: #000000 !important;
+        font-family: overpass;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FFFCF3;
+        transition: all ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            border: 3px solid white;
+            padding-left: 20px;
+            padding-top: 14px;
+        }
+    }
+
+    input[type="submit"]:disabled {
+        color: white;
+        cursor:not-allowed ;
+    }
+
+    .policiBox {
+        display: flex;
+        flex-direction: row;
+        div {
+            padding-top: 3px;
+        }
+    }
+
+    #email.ng-touched {
+        border: 3px solid white;
+    }
+
+    #message.ng-touched {
+        border: 3px solid white;
+    }
+
+    #name.ng-touched {
+        border: 3px solid white;
+    }
+
+    .inputBox {
+        width: 100%;
+        position: relative;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .textareaBox {
+        width: 100%;
+        position: relative;
+        margin-top: 6px;
+    }
+
+    .inputLabel {
+        position: absolute;
+        top: -8px;
+        left: 20px;
+        background-color: #000000;
+        padding-right: 3px;
+    }
+
+    #message {
+        height: auto;
+    }
+
+    ::placeholder {
+        font-family: overpass;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FFFCF3;
+    }
+}
+
+.inputValidImg {
+    position: absolute;
+    right: 23px;
+    top: 12px;
+}
+
+// .inputBox input {
+//     border: 2px solid white;
+// }
+
+// .touchedTextarea textarea {
+//     border: 2px solid white;
+// }
+
+
+.warningSpan {
+    color: red;
+    text-align: left;
+    font-size: 14px;
+    font-family: overpass;
+    margin-top: 6px;
+}
+
+.checkboxRow {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 32px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 32px;
+}
+
+.checkboxConatiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+        color: #00BC8F;
+        cursor: pointer;
+    }
+}
+
+.checked {
+    cursor: pointer;
+    &:hover {
+        background-color: #5988FF;
+        border-radius: 50%;
+    }
+
+}
+
+.scrollUpBox {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    img {
+        width: 40px;
+        height: 62px;
+        object-fit: cover;
+        transition: .3s all ease-in-out;
+        &:hover {
+            height: 82px;
+        }
+    }
+}
+
+
+

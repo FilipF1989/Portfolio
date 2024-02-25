@@ -1,0 +1,145 @@
+.hamburger-menu {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    cursor: pointer;
+}
+
+.ham-bar {
+    width: 70%;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .6s, opacity .8s, top .6s;
+}
+
+.bar-top {
+    top: 25%;
+}
+
+.bar-bottom {
+    top: 75%;
+}
+
+.hamburger-menu.active .bar-top {
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+}
+
+.hamburger-menu.active .bar-mid {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar-bottom {
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+}
+
+.navigationBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#navigation {
+    max-width: 100%;
+    max-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 92vh;
+    font-family: overpass;
+    font-size: 124px;
+    font-weight: 800;
+    a {
+        color: #000000;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        white-space: nowrap;
+    }
+}
+
+
+.linksAnime {
+    text-align: center;
+    width: 600px;
+    position: relative;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    transition: right 0.7s ease;
+  
+    .first, .second {
+      position: absolute;
+      width: 8px;
+      height: 50px;
+      background-color: #000000;
+      transition: right 0.3s ease; // Übergang für die rechte Position
+      bottom: 0;
+      transition: all 0.4s ease;
+      opacity: 1;
+    }
+  
+    .first {
+      left: -31px;
+      bottom: -3px;
+    }
+  
+    .second {
+      left: -10px;
+      transform: rotate(90deg); // Startposition ganz rechts
+      bottom: -30px;
+    }
+  
+    &:hover {
+        .first {
+            opacity: 0;
+        }
+      .second {
+        left: 460px;
+        height: 300px; // Bewege den zweiten Div ganz nach rechts beim Hover
+        bottom: -150px;
+      }
+    }
+  }
+
+  .blackSideLeft, .blackSideRight, .blackSideBottom {
+    position: absolute;
+    background-color: #000000;
+  }
+
+  .blackSideLeft {
+    top: 0;
+    bottom: 0;
+    width: 50px;
+  }
+
+  .blackSideRight {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+  }
+
+  .blackSideBottom {
+    bottom: -150px;
+    left: 0;
+    right: 0;
+    height: 200px;
+    transform: skewY(4deg);
+  }
+
+ 
+ 
+  

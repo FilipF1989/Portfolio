@@ -1,0 +1,32 @@
+<div id="navigation">
+    <div class="blackSideLeft"></div>
+    <div class="blackSideRight"></div>
+    <div class="blackSideBottom"></div>
+    <div class="navigationBar">
+        <img src="/assets/img/Group.png" alt="" class="logoIcon">
+        <div class="hamburger-menu active" (click)="toggleMenu()" #burger>
+            <div class="ham-bar bar-top"></div>
+            <div class="ham-bar bar-mid"></div>
+            <div class="ham-bar bar-bottom"></div>
+        </div>
+    </div>
+    <div class="linksContainer">
+        <div class="linksAnime">
+            <a [routerLink]="['/']" routerLinkActive="router-link-active">About me</a>
+            <div class="first line"></div>
+            <div class="second line"></div>
+        </div>
+        <div class="linksAnime">
+            <a [routerLink]="['/']" fragment="mySkill">My skill</a>
+            <div class="first line"></div>
+            <div class="second line"></div>
+        </div>
+        <div class="linksAnime">
+            <a [routerLink]="['/']" fragment="portfolio">Portfolio</a>
+            <div class="first line"></div>
+            <div class="second line"></div>
+        </div>
+
+
+    </div>
+</div>

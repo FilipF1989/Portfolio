@@ -1,27 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { TitleComponent } from './title/title.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { MySkillComponent } from './my-skill/my-skill.component';
-import { PortfolioSectionComponent } from './portfolio-section/portfolio-section.component';
-import { FooterComponent } from './footer/footer.component';
-import { FormSectionComponent } from './form-section/form-section.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    LandingPageComponent,
     CommonModule,
-    RouterOutlet,
-    HeaderComponent,
-    TitleComponent,
-    AboutMeComponent,
-    MySkillComponent,
-    PortfolioSectionComponent,
-    FooterComponent,
-    FormSectionComponent
+    RouterOutlet 
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

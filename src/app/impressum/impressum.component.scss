@@ -1,0 +1,16 @@
+#impressum {
+    margin-top: 100px;
+    font-family: overpass;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1, h3, p, a {
+    font-family: overpass;
+}
+
+h3 {
+    margin-top: 32px;
+}

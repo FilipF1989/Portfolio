@@ -1,0 +1,104 @@
+#aboutMeSection {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    .aboutMeTitle {
+        width: 620px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-family: syne;
+            font-size: 78px;
+            font-weight: 800;
+            line-height: 78px;
+            letter-spacing: 0.01em;
+            text-align: center;
+            margin-bottom: 52px;
+            &:hover {
+                color: #00BC8F;
+            }
+        }
+
+        button {
+            display: flex; /* Flexbox verwenden */
+            align-items: center; /* Vertikal zentrieren */
+            justify-content: center; /* Horizontal zentrieren */
+            font-family: overpass;
+            font-weight: 400;
+            font-size: 27.6px;
+            line-height: 27px;
+            white-space: nowrap;
+            padding: 20px 60px 20px 60px;
+            border: 4px solid black;
+            gap: 10px;
+            color: #000000;
+            margin-top: 82px;
+            transition: width 225ms ease-in-out;  /* Transition auf die Breite hinzugefügt */
+            width: 200px;  /* Anfangsgröße des Buttons */
+            
+            
+            &:hover {
+                width: 280px;
+            }
+        }
+        
+        
+    }
+}
+
+
+.aboutMeArticel {
+    font-family: overpass;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+
+.aboutMeImg {
+    position: relative;
+    width: 553px;
+    height: 553px;
+}
+
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 225ms ease-in-out;
+    box-sizing: border-box;
+    z-index: 2;
+
+    &:hover {
+        border: 4px solid black;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+    }
+}
+
+.aboutMeImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arrowLeftImg {
+    margin-left: 475px;
+    margin-top: 100px;
+}
+
+.moveArrowLeftAnimation {
+    transform: translate(-100px, 110px);
+    transition: transform 0.5s ease; 
+}
