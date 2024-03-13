@@ -30,31 +30,80 @@ html {
         text-align: center;
 
         &:hover {
-            color: #466CCA;
+            color: #00BC8F;
         }
-
     }
 }
+
+.skillImgBox {
+    width: 90%;
+    display: grid;
+    justify-items: center;
+    row-gap: 32px;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        'one two three four five'
+        'six seven eight nine ten'
+
+    ;
+
+}
+
+.item1 {
+    grid-area: one;
+}
+
+.item2 {
+    grid-area: two;
+}
+
+.item3 {
+    grid-area: three;
+}
+
+.item4 {
+    grid-area: four;
+}
+
+.item5 {
+    grid-area: five;
+}
+
+.item6 {
+    grid-area: six;
+}
+
+.item7 {
+    grid-area: seven;
+}
+
+.item8 {
+    grid-area: eight;
+}
+
+.item9 {
+    grid-area: nine;
+}
+
+.item10 {
+    grid-area: ten;
+}
+
 
 .skillsImgBox {
     width: 100%;
     height: 100%;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.skillImsFistRow,
-.skillImgSecondRow {
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
+
 
 .imgBox {
     display: flex;
@@ -66,6 +115,10 @@ html {
     letter-spacing: 0em;
     text-align: center;
     overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: min-content;
+
     &:hover {
         color: #00BC8F;
     }
@@ -76,8 +129,7 @@ html {
         margin-bottom: 12px;
 
         &:hover {
-            transform-origin: center;
-            animation: rotateX 1s linear ; 
+            animation: rotateX 1s ease-in;
         }
     }
 }
@@ -86,23 +138,23 @@ html {
 
     0% {
         transform: translateX(0px) rotateY(0deg);
-      }
-  
-      25% {
+    }
+
+    25% {
         transform: translateX(20px) rotateY(90deg);
-      }
-  
-      50% {
+    }
+
+    50% {
         transform: translateX(0px) rotateY(180deg);
-      }
-  
-      75% {
+    }
+
+    75% {
         transform: translateX(-20px) rotateY(270deg);
-      }
-  
-      100% {
+    }
+
+    100% {
         transform: translateX(0px) rotateY(360deg);
-      }
+    }
 }
 
 .arrowRightImg {
@@ -112,6 +164,88 @@ html {
 
 .moveArrowRightAnimation {
     transform: translate(100px, 110px);
-    transition: transform 0.5s ease; 
+    transition: transform 0.5s ease;
     animation-fill-mode: forwards;
 }
+
+@media screen and (max-width: 1400px) {
+    .arrowRightImg {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .sectionContainer {
+        margin-top: 86px;
+
+        .skillsImgBox {
+            padding-top: 60px;
+            padding-bottom: 60px;
+
+            .skillImgBox {
+                width: 100%;
+                row-gap: 32px;
+                grid-template-columns: auto auto auto auto auto;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    'one two three four five'
+                    'six seven eight nine ten'
+                ;
+            }
+        }
+
+        .titleMySkill h1 {
+            font-size: 46px;
+        }
+    }
+
+    .imgBox {
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .arrowLeftHiden {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .sectionContainer {
+        .titleMySkill {
+            h1 {
+                font-size: 36px;
+            }
+        }
+        .skillsImgBox {
+            padding-top: 60px;
+            padding-bottom: 60px;
+
+            .skillImgBox {
+                width: 100%;
+                row-gap: 32px;
+                grid-template-columns: auto auto auto;
+                grid-template-rows: auto auto auto auto;
+                grid-template-areas:
+                    'one two three'
+                    'four five six'
+                    'seven eight nine'
+                    '. ten  . ';
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+        .sectionContainer {
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+}
+

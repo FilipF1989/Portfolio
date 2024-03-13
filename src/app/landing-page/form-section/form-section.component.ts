@@ -71,6 +71,8 @@ export class FormSectionComponent {
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
       ngForm.resetForm();
+      this.isChecked = false;
+      this.policiChecked = false;
     }
   }
 
@@ -80,9 +82,9 @@ export class FormSectionComponent {
 
       if (ngForm.form.valid && this.isChecked) {
         this.onSubmit(ngForm);
-       this.isChecked = false;
+        this.isChecked = false;
         this.policiChecked = false;
-        this.contactData.message='';
+        this.contactData.message = '';
         ngForm.resetForm();
         console.log('enter');
       }

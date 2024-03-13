@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { routes } from './app.routes';
+import { after } from 'node:test';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +18,5 @@ import { routes } from './app.routes';
 })
 export class AppComponent {
   title = 'Portfolio';
+ 
 }

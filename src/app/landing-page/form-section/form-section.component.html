@@ -16,7 +16,7 @@
                 </div>
                 <div class="inputBox">
                     <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                        [placeholder]="email.touched ? '' : 'Your email'" required autocomplete="off">
+                        [placeholder]="email.touched ? '' : 'Your email'" required  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                     @if( email.touched ){
                     <span class="inputLabel">Your email</span>
                     <img class="inputValidImg"
@@ -31,7 +31,7 @@
                     <img class="inputValidImg"
                         [src]="message.value < 1 ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
                     }
-                    @if(message.value < 1 ) { <span class="warningSpan">Please enter a message</span>
+                    @if(message.value < 1 && message.touched) { <span class="warningSpan">Please enter a message</span>
                         }
                 </div>
 
@@ -39,25 +39,22 @@
                     <div class="checkboxRow">
                         <div class="policiBox">
                             <img (click)="Check()" #checked class="checked"
-                                [src]="isChecked ? 'assets/img/checkboxChecked.png' : 'assets/img/checkboxDefault.png'"
+                                [src]="isChecked ? '/assets/img/checkboxChecked.png' : '/assets/img/checkboxDefault.png'"
                                 alt="">
                             <div>I've read the <a
                                     href="https://www.privacypolicies.com/live/975daacb-2270-4e83-8d1d-645a7fc555e9"
                                     target="_blank">privacy polici</a> and agree to the processing of my data as
                                 outlined.</div>
                         </div>
-                        @if(checked.src == 'http://localhost:4200/assets/img/checkboxDefault.png' && policiChecked ) {
+                        @if(checked.src == 'assets/img/checkboxDefault.png' && policiChecked ) {
                         <div class="warningSpan">Please accept the privacy polici </div>
                         }
+
                     </div>
                     <input type="submit" #submit
                         [disabled]="!name.valid || !email.valid || !message.valid || !isChecked" value="Send a message"
                         class="submitBtn">
-
-
                 </div>
-
-
             </form>
         </div>
         <span class="scrollUpBox"><img src="assets/img/arrowUpAnimation.png" (click)="scrollTopTop()" alt=""></span>

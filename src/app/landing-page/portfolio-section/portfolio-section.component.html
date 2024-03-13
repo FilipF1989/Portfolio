@@ -1,20 +1,23 @@
-<h1 id="portfolio" #portfolio >Portfolio</h1>
-<h4>This page is a sample of my work - please feel free <br> to try them out</h4>
-<div class="portfolioItem" *ngFor="let portfolioItem of portfolioItems; let i = index" [ngClass]="{'flex-reverse': portfolioItem.dFlexDir}">
-    <div class="imgBox">
-        <img [src]="portfolioItem.imageUrl" alt="">
-        <div class="frame">
-            <div class="roundBox">
-                <img src="/assets/img/arrowAnime.png" alt="">
+<h1 id="portfolio" #portfolio>Portfolio</h1>
+<h4>This page is a sample of my work - please feel free  to try them out</h4>
+<div class="portfolioContainer">
+    <div class="portfolioItem" *ngFor="let portfolioItem of portfolioItems; let i = index"
+        [ngClass]="{'flex-reverse': portfolioItem.smallDispaly === 2 }" (window:resize)="onResize($event)" #divs>
+        <div class="imgBox">
+            <img [src]="portfolioItem.imageUrl" alt="">
+            <div class="frame">
+                <div class="roundBox">
+                    <img src="/assets/img/arrowAnime.png" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="content">
-        <span class="itemIndex">0{{ i + 1}}/0{{ portfolioItems.length}}</span>
-        <h2>{{portfolioItem.title}}</h2>
-        <h5>{{portfolioItem.tehnologies}}</h5>
-        <p>{{portfolioItem.description}}</p>
-        <button class="test">Test</button>
-    </div>
+        <div class="content">
+            <span class="itemIndex">0{{ i + 1}}/0{{ portfolioItems.length}}</span>
+            <h2>{{portfolioItem.title}}</h2>
+            <h5>{{portfolioItem.tehnologies}}</h5>
+            <p>{{portfolioItem.description}}</p>
+            <a [href]="portfolioItem.gitLink" target="_blank" ><button class="test">Test</button></a>
+        </div>
 
+    </div>
 </div>

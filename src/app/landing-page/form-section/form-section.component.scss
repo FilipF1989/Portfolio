@@ -69,7 +69,7 @@ form {
 }
 
 .submitBtn {
-    padding: 20px 60px ;
+    padding: 20px 60px;
     border: 4px solid #383838;
     gap: 10px;
     opacity: 0.3;
@@ -117,12 +117,13 @@ form {
 
     input[type="submit"]:disabled {
         color: white;
-        cursor:not-allowed ;
+        cursor: not-allowed;
     }
 
     .policiBox {
         display: flex;
         flex-direction: row;
+
         div {
             padding-top: 3px;
         }
@@ -182,15 +183,6 @@ form {
     top: 12px;
 }
 
-// .inputBox input {
-//     border: 2px solid white;
-// }
-
-// .touchedTextarea textarea {
-//     border: 2px solid white;
-// }
-
-
 .warningSpan {
     color: red;
     text-align: left;
@@ -222,6 +214,7 @@ form {
 
 .checked {
     cursor: pointer;
+
     &:hover {
         background-color: #5988FF;
         border-radius: 50%;
@@ -233,16 +226,53 @@ form {
     position: absolute;
     right: 100px;
     bottom: 100px;
+
     img {
         width: 40px;
         height: 62px;
         object-fit: cover;
         transition: .3s all ease-in-out;
+
         &:hover {
             height: 82px;
         }
     }
 }
 
+@media screen and (max-width: 800px) {
+    .formContainer {
+        margin-top: 150px;
+        h1 {
+            position: unset;
+            font-size: 64px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+    }
 
+    .checked {
+        width: 30px;
+        height: 30px;
+    }
 
+    .scrollUpBox {
+        display: none;
+    }
+
+    .formBox {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formContainer {
+        h1 {
+            font-size: 42px;
+        }
+    }
+
+    .submitBtn {
+        padding: 16px 42px;
+    }
+}

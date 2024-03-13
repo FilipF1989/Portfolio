@@ -7,7 +7,8 @@ import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes,withInMemoryScrolling({
-    scrollPositionRestoration: 'enabled',
-    anchorScrolling: 'enabled'
+    scrollPositionRestoration: 'disabled',
+    anchorScrolling: 'enabled',
+  
   }),), provideClientHydration(),provideHttpClient()]
 };

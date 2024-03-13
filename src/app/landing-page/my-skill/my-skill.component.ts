@@ -16,7 +16,6 @@ export class MySkillComponent implements AfterViewInit {
 
   @ViewChild('arrowRightImg') arrowRightImg!: ElementRef;
 
-
   ngAfterViewInit(): void {
   }
 

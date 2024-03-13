@@ -9,6 +9,7 @@
     color: #FFFFFF;
 }
 
+
 .footerUser {
     margin-left: 100px;
     display: flex;
@@ -17,8 +18,8 @@
     gap: 16px;
 
     img {
-        width: 66px;
-        height: 30px;
+        width: 85px;
+        height: auto;
     }
 
     span {
@@ -46,7 +47,7 @@
         margin-left: 24px;
         width: 40px;
         height: 40px;
-        transition: all .3s ease-in-out;
+        transition: all .3s ease-in;
 
         &:hover {
             transform: translateY(-24px);
@@ -60,8 +61,37 @@
     text-align: end;
     color: #FFFFFF;
     margin-top: 12px;
+
+    &:hover {
+        color: #00BC8F;
+    }
+
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 680px) {
+    #footer {
+        flex-direction: column-reverse;
+        .footerUser {
+            margin: unset;
+            align-items: center;
+            margin-top: 16px;
+        }
+        .footerIcons {
+            margin: unset;
+            span {
+                text-align: center;
+            }
+        }
+    }
+
+    .socialMediaBox {
+        img {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+    }
 }

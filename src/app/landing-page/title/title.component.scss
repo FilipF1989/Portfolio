@@ -48,6 +48,7 @@
     0% {
         transform: translateY(-50px);
     }
+
     100% {
         transform: translateY(120px);
     }
@@ -73,6 +74,7 @@
 
 .animeArrow {
     text-align: center;
+
     span {
         font-family: overpass;
         font-size: 23px;
@@ -80,5 +82,268 @@
         line-height: 23px;
         letter-spacing: -0.025em;
         text-align: left;
+    }
+}
+
+
+
+#aboutMeSection {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    .aboutMeTitle {
+        width: 620px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-family: syne;
+            font-size: 78px;
+            font-weight: 800;
+            line-height: 78px;
+            letter-spacing: 0.01em;
+            text-align: center;
+            margin-bottom: 52px;
+
+            &:hover {
+                color: #00BC8F;
+            }
+        }
+
+        button {
+            display: flex;
+            /* Flexbox verwenden */
+            align-items: center;
+            /* Vertikal zentrieren */
+            justify-content: center;
+            /* Horizontal zentrieren */
+            font-family: overpass;
+            font-weight: 400;
+            font-size: 27.6px;
+            line-height: 27px;
+            white-space: nowrap;
+            padding: 20px 60px 20px 60px;
+            border: 4px solid black;
+            gap: 10px;
+            color: #000000;
+            margin-top: 82px;
+            transition: width 225ms ease-in-out;
+            /* Transition auf die Breite hinzugefügt */
+            width: 200px;
+            /* Anfangsgröße des Buttons */
+
+
+            &:hover {
+                width: 280px;
+            }
+        }
+
+
+    }
+}
+
+
+.aboutMeArticel {
+    font-family: overpass;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+
+.aboutMeImg {
+    position: relative;
+    width: 553px;
+    height: 553px;
+}
+
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 225ms ease-in-out;
+    box-sizing: border-box;
+    z-index: 2;
+
+    &:hover {
+        border: 4px solid black;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+    }
+}
+
+.aboutMeImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arrowLeftImg {
+    margin-left: 475px;
+    margin-top: 100px;
+}
+
+.moveArrowLeftAnimation {
+    transform: translate(-100px, 110px);
+    transition: transform 0.5s ease;
+}
+
+@media screen and (max-width: 1500px) {
+    .arrowLeftImg {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    #title {
+        h1 {
+            font-size: 86px;
+        }
+    }
+
+
+    .titleName {
+        img {
+            width: 400px;
+        }
+    }
+
+    #aboutMeSection {
+        flex-direction: column;
+        align-items: center;
+
+        .aboutMeImg {
+            width: 600px;
+            height: 600px;
+        }
+
+        .aboutMeTitle {
+            a {
+                button {
+                    margin-top: 56px;
+                    margin-bottom: 56px;
+                }
+            }
+        }
+    }
+
+    .arrowLeftImg {
+        display: none;
+    }
+
+
+    .letsTalkBtn {
+        margin-top: unset;
+        margin-top: 56px;
+        margin-bottom: 56px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    #title {
+        padding-top: 118px;
+
+        h1 {
+            font-size: 56px;
+            line-height: unset;
+        }
+        span {
+            font-size: 42px;
+        }
+    }
+
+    #aboutMeSection {
+        .aboutMeTitle {
+            width: 100%;
+        }
+
+        .aboutMeImg {
+            margin-left: 100px;
+            margin-right: 100px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+
+    .titleName {
+        img {
+            width: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    #title {
+        padding-top: 118px;
+
+        .titleSection {
+            h1 {
+                font-size: 42px;
+                line-height: unset;
+            }
+        }
+    }
+
+    .titleName {
+        margin-top: unset;
+
+        img {
+            width: 100px;
+        }
+
+    }
+
+    .animeBox {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: unset;
+
+        .animeArrow {
+            margin-right: -12px;
+        }
+    }
+
+    #aboutMeSection {
+        margin-left: 25px;
+        margin-right: 25px;
+
+        .aboutMeTitle {
+            width: 100%;
+            h1 {
+                font-size: 42px;
+            }
+        }
+
+        .frame {
+            display: none;
+        }
+
+        .aboutMeImg {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 90%;
+                height: auto;
+            }
+        }
+    }
+
+    .aboutMeTitle {
+        h1 {
+            font-size: 42px;
+        }
     }
 }

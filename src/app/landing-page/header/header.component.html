@@ -1,4 +1,8 @@
 <div id="header_section" #header>
-    <img src="/assets/img/Group.png" alt="" class="logoIcon">
-    <a [routerLink]="['/navigation']" routerLinkActive="router-link-active" ><img src="/assets/img/burgerMenuIcon.png" alt="" class="burgerIcon"></a>
+    <img src="/assets/img/logoTransparent.jpeg" alt="" class="logoIcon">
+    <div class="hamburger-menu" (click)="toggleMenu()" #burger>
+        <div class="ham-bar bar-top"></div>
+        <div class="ham-bar bar-mid"></div>
+        <div class="ham-bar bar-bottom"></div>
+    </div>
 </div>

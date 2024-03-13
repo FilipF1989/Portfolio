@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, AfterViewInit , Renderer2} from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, ViewChild, ElementRef, AfterViewInit , Renderer2, inject} from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 })
 export class NavigationComponent implements AfterViewInit{
 
+  router = inject(Router);
   @ViewChild('burger') burger!: ElementRef;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
@@ -21,6 +22,9 @@ export class NavigationComponent implements AfterViewInit{
     const hamIsActive = this.burger.nativeElement.classList.contains('active');
     if (hamIsActive) {
       this.burger.nativeElement.classList.remove('active');
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 300);
     } else {
       this.burger.nativeElement.classList.add('active');
     }

@@ -3,7 +3,8 @@
     <div class="blackSideRight"></div>
     <div class="blackSideBottom"></div>
     <div class="navigationBar">
-        <img src="/assets/img/Group.png" alt="" class="logoIcon">
+
+        <a [routerLink]="['/']"><img src="/assets/img/logoNewFFTransparent.png" alt="" class="logoIcon"></a>
         <div class="hamburger-menu active" (click)="toggleMenu()" #burger>
             <div class="ham-bar bar-top"></div>
             <div class="ham-bar bar-mid"></div>
@@ -17,7 +18,7 @@
             <div class="second line"></div>
         </div>
         <div class="linksAnime">
-            <a [routerLink]="['/']" fragment="mySkill">My skill</a>
+            <a [routerLink]="['/']" fragment="mySkillsSection">My skill</a>
             <div class="first line"></div>
             <div class="second line"></div>
         </div>
