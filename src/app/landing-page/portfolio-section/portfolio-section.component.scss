@@ -146,6 +146,7 @@ h4 {
     transition: width 225ms ease-in-out;
     z-index: 2;
     cursor: pointer;
+    margin-right: 12px;
 
     &:hover {
         width: 200px !important;
@@ -249,6 +250,7 @@ p {
         .content {
             width: 650px;
             height: 380px;
+            margin-top: 20px;
         }
 
         .roundBox {
@@ -282,6 +284,7 @@ p {
     .portfolioContainer {
         .portfolioItem {
             margin: 24px 100px;
+
             .roundBox {
                 width: 80px;
                 height: 80px;
@@ -291,11 +294,13 @@ p {
             .content {
                 width: 100%;
                 height: 400px;
+
                 span {
                     margin-top: 32px;
                     text-align: left;
                 }
             }
+
             .test {
                 margin-top: 12px;
             }
@@ -310,23 +315,58 @@ p {
     h1 {
         font-size: 42px;
     }
+
     h4 {
         margin-left: 25px;
         margin-right: 25px;
     }
+
     .portfolioContainer {
         .portfolioItem {
-            margin-left: 50px;
-            margin-right: 50px;
+            margin-left: 25px;
+            margin-right: 25px;
+
             .content {
                 width: 100%;
                 height: auto;
             }
+
             .imgBox {
                 height: 400px;
             }
-            
+
         }
     }
 
+}
+
+@media screen and (max-width: 450px) {
+    .portfolioContainer {
+        .portfolioItem {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            .frame {
+                display: none;
+            }
+
+            .content {
+                .buttons {
+                    display: flex;
+                    justify-content: space-between;
+                    .test {
+                        width: 130px;
+                    }
+                }
+                span {
+                    margin-top: 22px;
+                    font-size: 32px;
+                }
+
+                h2 {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
 }

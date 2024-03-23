@@ -1,59 +1,90 @@
 <div id="formSection">
     <div class="formContainer">
         <h1>Say Hi!</h1>
-        <h3>Want to discuss a new project?</h3>
-        <h4>Say hello! let's discuss your ideas and make it happen</h4>
+        <h3 *ngIf="language === 'en'">Want to discuss a new project?</h3>
+        <h3 *ngIf="language === 'de'">Möchten Sie über ein neues Projekt diskutieren?</h3>
+        <h4 *ngIf="language === 'en'">Say hello! let's discuss your ideas and make it happen</h4>
+        <h4 *ngIf="language === 'de'">
+            Sagen Sie Hallo! Lassen Sie uns Ihre Ideen besprechen und umsetzen.</h4>
         <div class="formBox">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" autocomplete="off" (keydown)="enterForm($event, contactForm)">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" autocomplete="off"
+                (keydown)="enterForm($event, contactForm)">
                 <div class="inputBox">
                     <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
-                        [placeholder]="name.touched ? '' : 'Your name'" required autocomplete="off">
+                        [placeholder]="language === 'en' ? (name.touched ? '' : 'Your name') : (name.touched ? '' : 'Dein Name')"
+                        required autocomplete="off">
                     @if( name.touched ){
-                    <span class="inputLabel">Your name</span>
+                    <span *ngIf="language === 'en'" class="inputLabel">Your name</span>
+                    <span *ngIf="language === 'de'" class="inputLabel">Dein Name</span>
                     <img class="inputValidImg"
                         [src]="name.value < 1 ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
-                    @if(name.value<1) { <span class="warningSpan">Please enter your name</span>} }
+                    @if(name.value<1) { <span class="warningSpan" *ngIf="language === 'en'">Please enter your
+                        name</span>
+                        <span class="warningSpan" *ngIf="language === 'de'">Bitte Name eingeben</span>
+                        } }
                 </div>
                 <div class="inputBox">
                     <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                        [placeholder]="email.touched ? '' : 'Your email'" required  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                        [placeholder]="language === 'en' ? ( email.touched ? '' : 'Your email') : (email.touched ? '' : 'Deine Email')"
+                        required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                     @if( email.touched ){
-                    <span class="inputLabel">Your email</span>
+                    <span *ngIf="language === 'en'" class="inputLabel">Your email</span>
+                    <span *ngIf="language === 'de'" class="inputLabel">Deine Email</span>
                     <img class="inputValidImg"
                         [src]="!email.valid ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
-                    @if(email.value < 1) { <span class="warningSpan">Please enter your email</span>} }
+                    @if(email.value < 1) { <span *ngIf="language==='en'" class="warningSpan">Please enter your
+                        email</span>
+                        <span *ngIf="language==='de'" class="warningSpan">Bitte Email eingeben</span>
+                        } }
                 </div>
                 <div class="textareaBox">
                     <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message" cols="30"
-                        rows="10" required [placeholder]="message.touched ? '' : 'Your message'"></textarea>
+                        rows="10" required
+                        [placeholder]="language === 'en' ? ( message.touched ? '' : 'Your message') : (message.touched ? '' : 'Deine Nachricht')"></textarea>
                     @if(message.touched) {
-                    <span class="inputLabel">Your message</span>
+                    <span *ngIf="language === 'en'" class="inputLabel">Your message</span>
+                    <span *ngIf="language === 'de'" class="inputLabel">Deine Nachricht</span>
                     <img class="inputValidImg"
                         [src]="message.value < 1 ? 'assets/img/notValid.png' : 'assets/img/valid.png' " alt="">
                     }
-                    @if(message.value < 1 && message.touched) { <span class="warningSpan">Please enter a message</span>
+                    @if(message.value < 1 && message.touched) { <span class="warningSpan" *ngIf="language==='en'">Please
+                        enter a message</span>
+                        <span class="warningSpan" *ngIf="language==='de'">Bitte Nachricht eingeben </span>
                         }
                 </div>
 
                 <div class="checkboxConatiner">
                     <div class="checkboxRow">
                         <div class="policiBox">
-                            <img (click)="Check()" #checked class="checked"
+                            <div>
+                                <img (click)="Check()" #checked class="checked"
                                 [src]="isChecked ? '/assets/img/checkboxChecked.png' : '/assets/img/checkboxDefault.png'"
                                 alt="">
-                            <div>I've read the <a
+                            <div *ngIf="language === 'en'">I've read the <a
                                     href="https://www.privacypolicies.com/live/975daacb-2270-4e83-8d1d-645a7fc555e9"
                                     target="_blank">privacy polici</a> and agree to the processing of my data as
                                 outlined.</div>
+                            <div *ngIf="language === 'de'">Ich habe die <a
+                                    href="https://www.privacypolicies.com/live/975daacb-2270-4e83-8d1d-645a7fc555e9"
+                                    target="_blank">Datenschutzrichtlinie </a> gelesen und stimme der Verarbeitung
+                                meiner Daten gemäß den Bestimmungen zu.</div>
+                            </div>
+                            <div *ngIf="emailSucces">
+                                <div class="succesEmail" [style.color]="emailSent ? 'green' : 'red'">
+                                    {{ emailSent ? (language === 'en' ? 'E-Mail successfully sent!' : 'E-Mail erfolgreich versendet!') : (language === 'en' ? 'Email was not sent!' : 'E-Mail wurde nicht gesendet!') }}
+                                </div>
+                            </div>
+
                         </div>
                         @if(checked.src == 'assets/img/checkboxDefault.png' && policiChecked ) {
-                        <div class="warningSpan">Please accept the privacy polici </div>
+                        <div *ngIf="language === 'en'" class="warningSpan">Please accept the privacy polici </div>
+                        <div *ngIf="language === 'de'" class="warningSpan">Bitte akzeptieren Sie die
+                            Datenschutzrichtlinie</div>
                         }
 
                     </div>
-                    <input type="submit" #submit
-                        [disabled]="!name.valid || !email.valid || !message.valid || !isChecked" value="Send a message"
-                        class="submitBtn">
+                    <input type="submit" [disabled]="!name.valid || !email.valid || !message.valid || !isChecked"
+                        value="Send a message" class="submitBtn">
                 </div>
             </form>
         </div>

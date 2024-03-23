@@ -13,12 +13,14 @@
     </div>
     <div class="linksContainer">
         <div class="linksAnime">
-            <a [routerLink]="['/']" routerLinkActive="router-link-active">About me</a>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" *ngIf="language === 'en'">About me</a>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" *ngIf="language === 'de'">Mein Weg</a>
             <div class="first line"></div>
             <div class="second line"></div>
         </div>
         <div class="linksAnime">
-            <a [routerLink]="['/']" fragment="mySkillsSection">My skill</a>
+            <a [routerLink]="['/']" fragment="mySkillsSection" *ngIf="language === 'en'">My skill</a>
+            <a [routerLink]="['/']" fragment="mySkillsSection" *ngIf="language === 'de'">Meine Skills</a>
             <div class="first line"></div>
             <div class="second line"></div>
         </div>

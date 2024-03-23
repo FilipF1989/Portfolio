@@ -1,8 +1,13 @@
 <div id="header_section" #header>
     <img src="/assets/img/logoTransparent.jpeg" alt="" class="logoIcon">
-    <div class="hamburger-menu" (click)="toggleMenu()" #burger>
-        <div class="ham-bar bar-top"></div>
-        <div class="ham-bar bar-mid"></div>
-        <div class="ham-bar bar-bottom"></div>
+    <div class="icons">
+        <img src="/assets/img/englishFlagIcon.png" (click)="translateLanguage('en')"  alt="">
+        <img src="/assets/img/germanFlagIcon.png" (click)="translateLanguage('de')"  alt="">
+        <div class="hamburger-menu" (click)="toggleMenu()" #burger>
+            <div class="ham-bar bar-top"></div>
+            <div class="ham-bar bar-mid"></div>
+            <div class="ham-bar bar-bottom"></div>
+        </div>
+        
     </div>
 </div>

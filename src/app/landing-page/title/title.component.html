@@ -4,7 +4,7 @@
         <h1>Developer</h1>
     </div>
     <div class="titleName">
-        <img src="../../assets/img/Vector.png" alt="">
+        <img src="/assets/img/Vector.png" alt="">
         <span>Filip Filipovic</span>
     </div>
 </div>
@@ -17,23 +17,18 @@
 </div>
 <div id="aboutMeSection">
     <div class="aboutMeTitle">
-        <h1>About me</h1>
-        <div class="aboutMeArticel">
-            Hello from Stuttgart! I'm a novice web developer, fluent in both German and English, excited to share my
-            early
-            steps in coding.
-            I call Stuttgart home, drawing inspiration from its tech scene. As a bilingual beginner, I'm navigating the
-            world of web development, eager to learn and grow.
-            My journey includes a simple Jump and Run game. Creating this project not only taught me coding basics but
-            also
-            fueled my passion for building things that people can interact with.
-
-        </div>
-        <a href="#footer"><button class="letsTalkBtn">Lets's talk</button></a>
+        <h1 *ngIf="language === 'en'">About me</h1>
+        <h1 style="white-space: nowrap;" *ngIf="language === 'de'">Mein Weg</h1>
+        <div class="aboutMeArticel" *ngIf="language === 'en'">{{ article.en }}</div>
+        <div class="aboutMeArticel" *ngIf="language === 'de'">{{ article.de }}</div>
+        <a href="#footer">
+            <button *ngIf="language === 'en'" class="letsTalkBtn">Lets's talk</button>
+            <button *ngIf="language === 'de'" class="letsTalkBtn">Reden wir</button>
+        </a>
     </div>
     <div class="aboutMeImg">
         <div class="frame"></div>
-        <img src="/assets/img/Mask group.png" alt="" class="profileImg">
+        <img src="/assets/img/profilePicture.jpg" alt="" class="profileImg">
     </div>
 </div>
 <div>

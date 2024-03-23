@@ -121,8 +121,11 @@ form {
     }
 
     .policiBox {
+        >:first-child {
+            display: flex;
+        }
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         div {
             padding-top: 3px;
@@ -214,6 +217,8 @@ form {
 
 .checked {
     cursor: pointer;
+    width: 24px;
+    height: 24px;
 
     &:hover {
         background-color: #5988FF;
@@ -239,13 +244,21 @@ form {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .scrollUpBox {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .formContainer {
         margin-top: 150px;
+
         h1 {
             position: unset;
             font-size: 64px;
         }
+
         h4 {
             font-size: 20px;
         }
@@ -254,10 +267,6 @@ form {
     .checked {
         width: 30px;
         height: 30px;
-    }
-
-    .scrollUpBox {
-        display: none;
     }
 
     .formBox {
@@ -270,9 +279,27 @@ form {
         h1 {
             font-size: 42px;
         }
+
+        h3,
+        h4 {
+            margin-left: 25px;
+            margin-right: 25px;
+        }
     }
 
     .submitBtn {
         padding: 16px 42px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .formContainer {
+
+        h3,
+        h4 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
 }

@@ -168,7 +168,7 @@ html {
     animation-fill-mode: forwards;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1900px) {
     .arrowRightImg {
         display: none;
     }
@@ -233,7 +233,7 @@ html {
                 grid-template-rows: auto auto auto auto;
                 grid-template-areas:
                     'one two three'
-                    'four five six'
+                    'four six five'
                     'seven eight nine'
                     '. ten  . ';
 
@@ -247,5 +247,33 @@ html {
             margin-left: 25px;
             margin-right: 25px;
         }
+}
+
+@media screen and (max-width: 450px) {
+    .sectionContainer {
+        margin-left: 10px;
+        margin-right: 10px;
+        .titleMySkill {
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        .skillsImgBox {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            .skillImgBox {
+                row-gap: 22px;
+                .imgBox {
+                    margin-left: 0;
+                    margin-right: 0;
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
 }
 

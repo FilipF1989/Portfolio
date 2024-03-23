@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule , Router} from '@angular/router';
 import { inject } from '@angular/core';
-import { ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { ViewChild, ElementRef, Renderer2} from '@angular/core';
+import { CommunicationService } from '../../shared/services.service';
+
 
 
 @Component({
@@ -12,16 +14,24 @@ import { ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent  {
   
   router = inject(Router);
+  elementRef = inject(ElementRef);
+  renderer = inject(Renderer2);
   @ViewChild('burger') burger!: ElementRef;
+  CommunicationService = inject(CommunicationService);
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
-  ngAfterViewInit(): void {
-    
+  translateLanguage(languages:string) {
+    this.CommunicationService.translateLanguage(languages);
+    localStorage.setItem('lanuage',languages);
   }
 
+  constructor() {
+  
+  }
+
+ 
   toggleMenu() {
     const hamIsActive = this.burger.nativeElement.classList.contains('active');
     if (hamIsActive) {

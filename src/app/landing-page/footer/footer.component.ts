@@ -17,10 +17,6 @@ export class FooterComponent  {
   constructor( private router: Router) { }
 
   openNewTab() {
-    const url = this.router.serializeUrl(
-      this.router.createUrlTree(['/impressum'])
-    );
-
-    window.open(url, '_blank');
+    this.router.navigate(['/impressum'])
   }
 }

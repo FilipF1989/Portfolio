@@ -68,8 +68,7 @@
     font-weight: 300;
     line-height: 23px;
     transform: rotate(270deg);
-    margin-left: 6px;
-    font-size: 23px;
+    font-size: 24px;
 }
 
 .animeArrow {
@@ -198,10 +197,12 @@
     transition: transform 0.5s ease;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1800px) {
     .arrowLeftImg {
         display: none;
     }
+
+
 }
 
 
@@ -238,11 +239,6 @@
         }
     }
 
-    .arrowLeftImg {
-        display: none;
-    }
-
-
     .letsTalkBtn {
         margin-top: unset;
         margin-top: 56px;
@@ -258,6 +254,7 @@
             font-size: 56px;
             line-height: unset;
         }
+
         span {
             font-size: 42px;
         }
@@ -321,6 +318,7 @@
 
         .aboutMeTitle {
             width: 100%;
+
             h1 {
                 font-size: 42px;
             }
@@ -344,6 +342,65 @@
     .aboutMeTitle {
         h1 {
             font-size: 42px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .imageAnimation {
+        width: 113px;
+    }
+
+    .emailVertikal {
+        font-size: 18px;
+        margin-left: 25px;
+    }
+
+    #title {
+        img {
+            width: 120px;
+        }
+
+        span {
+            font-size: 28px;
+        }
+
+        .titleName {
+            margin-top: unset;
+        }
+
+        .titleSection {
+            h1 {
+                font-size: 36px;
+            }
+        }
+    }
+
+    .animeBox {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #aboutMeSection {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .aboutMeTitle {
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .aboutMeImg {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            img {
+                width: 100%;
+            }
         }
     }
 }

@@ -28,7 +28,6 @@ a {
     width: 32px;
     position: relative;
     cursor: pointer;
-    margin-right: 100px;
     margin-top: 6px;
 }
 
@@ -42,6 +41,15 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform .6s, opacity .8s, top .6s;
+}
+
+.icons {
+    margin-right: 100px;
+
+    display: flex;
+    > * {
+        margin-left: 24px;
+    }
 }
 
 .logoIcon {
@@ -75,8 +83,25 @@ a {
     .logoIcon {
         margin-left: 25px;
     }
-    .hamburger-menu {
+    
+    .icons {
         margin-right: 25px;
-
+        display: flex;
+        > * {
+            margin-left: 16px;
+        }
     }
+    
+}
+
+@media  screen and (max-width: 450px){
+    .logoIcon {
+        margin-left: 10px;
+    }
+
+    .icons {
+        margin-right: 10px;
+    }
+
+
 }
